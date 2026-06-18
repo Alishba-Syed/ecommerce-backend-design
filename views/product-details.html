@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShopEase – Product Details</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="home.html" class="logo">Shop<span>Ease</span></a>
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="home.html#categories">Categories</a></li>
+        <li><a href="home.html#features">About</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="#" class="btn-cart">&#128722; Cart (0)</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="home.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="home.html#categories">Categories</a>
+      <a href="home.html#features">About</a>
+    </div>
+  </nav>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb-bar">
+    <div class="breadcrumb-inner">
+      <a href="home.html">Home</a> &rsaquo;
+      <a href="products.html">Products</a> &rsaquo;
+      <span id="breadcrumb-product">Product Details</span>
+    </div>
+  </div>
+
+  <!-- PRODUCT DETAIL -->
+  <div class="detail-section">
+
+    <!-- LEFT: IMAGE GALLERY -->
+    <div class="gallery">
+      <div class="gallery-main">
+        <span class="badge-main" id="badge-main">New Arrival</span>
+        <img src="/images/product-earbuds.jpg" alt="Product" id="mainImg" />
+      </div>
+      <div class="gallery-thumbs">
+        <div class="gallery-thumb active">
+          <img src="/images/product-earbuds.jpg" alt="View 1" id="thumb-0" />
+        </div>
+        <div class="gallery-thumb">
+          <img src="/images/product-earbuds.jpg" alt="View 2" id="thumb-1" />
+        </div>
+        <div class="gallery-thumb">
+          <img src="/images/product-earbuds.jpg" alt="View 3" id="thumb-2" />
+        </div>
+        <div class="gallery-thumb">
+          <img src="/images/product-earbuds.jpg" alt="View 4" id="thumb-3" />
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: PRODUCT INFO -->
+    <div class="product-details">
+      <div class="detail-category" id="detail-category">Electronics &bull; Audio</div>
+
+      <h1 class="detail-title" id="detail-title">Product Name</h1>
+
+      <div class="detail-rating">
+        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span class="rating-score" id="rating-score">4.8</span>
+        <span class="rating-count" id="rating-count">(0 reviews)</span>
+        <a href="#reviews" class="review-link">Read reviews</a>
+      </div>
+
+      <hr class="detail-divider" />
+
+      <div class="price-block">
+        <span class="price-current" id="price-current">$0.00</span>
+        <span class="price-old" id="price-old">$0.00</span>
+        <span class="price-discount" id="price-discount">0% OFF</span>
+      </div>
+
+      <div class="stock-badge in-stock" id="stock-status">In Stock</div>
+
+      <div class="highlights">
+        <h4>Highlights</h4>
+        <ul id="highlights-list">
+          <li>Loading...</li>
+        </ul>
+      </div>
+
+      <div class="option-group">
+        <span class="option-label">Color: <strong id="selectedColor">Default</strong></span>
+        <div class="color-options">
+          <div class="color-swatch active" style="background:#1a1a2e;" title="Midnight Black" onclick="selectColor(this,'Midnight Black')"></div>
+          <div class="color-swatch" style="background:#f4f6f8;border:2px solid #dde2e8;" title="Pearl White" onclick="selectColor(this,'Pearl White')"></div>
+          <div class="color-swatch" style="background:#e94560;" title="Ruby Red" onclick="selectColor(this,'Ruby Red')"></div>
+          <div class="color-swatch" style="background:#0f3460;" title="Ocean Blue" onclick="selectColor(this,'Ocean Blue')"></div>
+        </div>
+      </div>
+
+      <div class="option-group">
+        <span class="option-label">Quantity</span>
+        <div class="qty-selector">
+          <button class="qty-btn" onclick="changeQty(-1)">&#8722;</button>
+          <input class="qty-input" type="number" id="qty" value="1" min="1" max="10" />
+          <button class="qty-btn" onclick="changeQty(1)">&#43;</button>
+        </div>
+      </div>
+
+      <div class="cta-row">
+        <button class="btn-cta-primary" id="addCartBtn">&#128722; Add to Cart</button>
+        <button class="btn-cta-secondary" onclick="alert('Redirecting to checkout...')">&#9889; Buy Now</button>
+        <button class="btn-wishlist" aria-label="Add to Wishlist">&#9825;</button>
+      </div>
+
+      <div class="trust-badges">
+        <div class="trust-badge">
+          <span class="icon">&#128666;</span>
+          <strong>Free Shipping</strong>over $30
+        </div>
+        <div class="trust-badge">
+          <span class="icon">&#128260;</span>
+          <strong>30-Day Returns</strong>no questions
+        </div>
+        <div class="trust-badge">
+          <span class="icon">&#128274;</span>
+          <strong>Secure Checkout</strong>SSL encrypted
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TABS -->
+  <div class="tabs-section">
+    <div class="tab-nav">
+      <button class="tab-btn active" data-tab="description">Description</button>
+      <button class="tab-btn" data-tab="specs">Specifications</button>
+      <button class="tab-btn" data-tab="reviews">Reviews</button>
+    </div>
+
+    <div class="tab-content active" id="tab-description">
+      <p id="desc-text">Loading product description...</p>
+    </div>
+
+    <div class="tab-content" id="tab-specs">
+      <table class="spec-table" id="specs-table">
+        <tr><td>Loading...</td><td></td></tr>
+      </table>
+    </div>
+
+    <div class="tab-content" id="tab-reviews">
+      <div class="reviews-summary" id="reviews">
+        <div class="avg-score">
+          <div class="big-num" id="avg-score-num">4.8</div>
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p id="avg-score-label">0 reviews</p>
+        </div>
+        <div class="rating-bars">
+          <div class="rating-bar-row"><span>5&#9733;</span><div class="bar-track"><div class="bar-fill" style="width:78%;"></div></div><span>78%</span></div>
+          <div class="rating-bar-row"><span>4&#9733;</span><div class="bar-track"><div class="bar-fill" style="width:15%;"></div></div><span>15%</span></div>
+          <div class="rating-bar-row"><span>3&#9733;</span><div class="bar-track"><div class="bar-fill" style="width:5%;"></div></div><span>5%</span></div>
+          <div class="rating-bar-row"><span>2&#9733;</span><div class="bar-track"><div class="bar-fill" style="width:1%;"></div></div><span>1%</span></div>
+          <div class="rating-bar-row"><span>1&#9733;</span><div class="bar-track"><div class="bar-fill" style="width:1%;"></div></div><span>1%</span></div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="reviewer">
+          <div class="reviewer-avatar">S</div>
+          <div>
+            <div class="reviewer-name">Sarah K.</div>
+            <div class="review-date">May 15, 2026</div>
+          </div>
+        </div>
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">Absolutely love this product! Exactly as described and arrived quickly. Would definitely recommend to anyone looking for quality at a great price.</p>
+      </div>
+
+      <div class="review-card">
+        <div class="reviewer">
+          <div class="reviewer-avatar">M</div>
+          <div>
+            <div class="reviewer-name">Marcus T.</div>
+            <div class="review-date">April 28, 2026</div>
+          </div>
+        </div>
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+        <p class="review-text">Great quality and very well packaged. Took a couple of days to get used to it but now I use it every day. Solid purchase.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- RELATED PRODUCTS -->
+  <div class="related-section">
+    <h2>You Might Also Like</h2>
+    <div class="related-grid" id="related-grid">
+      <!-- populated by JS -->
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <span>&copy; 2026 ShopEase. All rights reserved.</span>
+        <span><a href="products.html" style="color:#aab4c8;text-decoration:none;">&#8592; Back to Products</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* ── PRODUCT CATALOG ── */
+    const catalog = {
+      'earbuds': {
+        name: 'Wireless Earbuds Pro',
+        category: 'Electronics · Audio',
+        price: '$59.99', oldPrice: '$89.00', discount: '33% OFF',
+        rating: '4.8', reviews: '128',
+        stock: 'In Stock — Ships within 24 hours',
+        badge: 'New Arrival',
+        images: ['product-earbuds.jpg', 'product-earbuds-2.jpg', 'product-earbuds-3.jpg', 'product-earbuds-4.jpg'],
+        highlights: ['Active Noise Cancellation (ANC)', '30-hour total battery life', 'IPX5 Water Resistant', 'Bluetooth 5.3 — 10m range', 'Touch controls with voice assistant'],
+        description: 'The Wireless Earbuds Pro deliver an immersive audio experience in a compact, ergonomic design. With advanced ANC, every note, podcast, and call comes through crystal-clear. The custom-tuned 10mm drivers produce rich bass and crisp treble. A 10-minute quick charge gives you 1.5 hours of playback.',
+        specs: [['Driver Size','10mm dynamic driver'],['Frequency Response','20Hz – 20kHz'],['Bluetooth','5.3'],['Range','Up to 10 metres'],['Battery — Earbuds','8 hours (ANC on: 6 hrs)'],['Battery — Case','22 hours additional'],['Water Resistance','IPX5'],['Charging','USB-C'],['Microphones','4 mics (2 per bud)'],['Warranty','1 Year']]
+      },
+      'smartwatch': {
+        name: 'Smart Watch Series X',
+        category: 'Electronics · Wearables',
+        price: '$129.99', oldPrice: null, discount: null,
+        rating: '4.4', reviews: '94',
+        stock: 'In Stock — Ships within 24 hours',
+        badge: 'Hot',
+        images: ['product-smartwatch.jpg', 'product-smartwatch.jpg', 'product-smartwatch.jpg', 'product-smartwatch.jpg'],
+        highlights: ['Health & fitness tracking', '7-day battery life', 'Water resistant (5ATM)', 'Always-on AMOLED display', 'Built-in GPS & heart rate monitor'],
+        description: 'The Smart Watch Series X combines cutting-edge health monitoring with a sleek, modern design. Track your fitness, receive notifications, and stay connected — all from your wrist. The always-on AMOLED display looks stunning indoors and in direct sunlight.',
+        specs: [['Display','1.4" AMOLED always-on'],['Battery Life','Up to 7 days'],['Water Resistance','5ATM (50m)'],['GPS','Built-in GPS + GLONASS'],['Health Sensors','Heart rate, SpO2, stress'],['Compatibility','iOS 12+ / Android 8+'],['Connectivity','Bluetooth 5.0, Wi-Fi'],['Charging','Magnetic wireless'],['Warranty','1 Year']]
+      },
+      'laptop-stand': {
+        name: 'Aluminium Laptop Stand',
+        category: 'Electronics · Accessories',
+        price: '$29.99', oldPrice: '$45.00', discount: '33% OFF',
+        rating: '4.8', reviews: '210',
+        stock: 'In Stock — Ships within 24 hours',
+        badge: 'Sale',
+        images: ['product-laptop-stand.jpg', 'product-laptop-stand.jpg', 'product-laptop-stand.jpg', 'product-laptop-stand.jpg'],
+        highlights: ['Premium aircraft-grade aluminium', 'Adjustable height & angle', 'Compatible with all laptops up to 17"', 'Non-slip silicone pads', 'Foldable & portable design'],
+        description: 'Elevate your workspace with the Aluminium Laptop Stand. Crafted from aircraft-grade aluminium, it provides a sturdy, stable platform for your laptop while promoting better posture. The foldable design makes it perfect for home, office, or travel.',
+        specs: [['Material','Aircraft-grade aluminium'],['Compatible Sizes','Up to 17" laptops'],['Weight Capacity','Up to 10kg'],['Adjustable Angle','15° – 45°'],['Height Range','60mm – 160mm'],['Base Grip','Non-slip silicone'],['Folded Dimensions','260 × 120 × 15mm'],['Weight','380g'],['Warranty','2 Years']]
+      },
+      'speaker': {
+        name: 'Portable Bluetooth Speaker',
+        category: 'Electronics · Audio',
+        price: '$44.99', oldPrice: null, discount: null,
+        rating: '4.4', reviews: '76',
+        stock: 'In Stock — Ships within 24 hours',
+        badge: null,
+        images: ['product-speaker.jpg', 'product-speaker.jpg', 'product-speaker.jpg', 'product-speaker.jpg'],
+        highlights: ['360° surround sound', '12-hour battery life', 'IPX7 waterproof', 'Bluetooth 5.0 connectivity', 'Built-in microphone for calls'],
+        description: 'Take your music anywhere with the Portable Bluetooth Speaker. IPX7 waterproof rated, it handles rain, splashes, and even brief submersion. The 360° drivers fill any room with rich, balanced sound and the built-in mic lets you take calls hands-free.',
+        specs: [['Output Power','20W total (2 × 10W)'],['Frequency Response','60Hz – 20kHz'],['Bluetooth','5.0'],['Battery Life','12 hours at 70% volume'],['Waterproof Rating','IPX7'],['Charging','USB-C (2 hrs full charge)'],['Weight','540g'],['Dimensions','180 × 70mm'],['Warranty','1 Year']]
+      },
+      'jacket': {
+        name: 'Classic Denim Jacket',
+        category: 'Fashion · Outerwear',
+        price: '$79.99', oldPrice: null, discount: null,
+        rating: '4.8', reviews: '52',
+        stock: 'In Stock — Ships within 24 hours',
+        badge: 'New',
+        images: ['product-jacket.jpg', 'product-jacket.jpg', 'product-jacket.jpg', 'product-jacket.jpg'],
+        highlights: ['100% premium cotton denim', 'Classic relaxed fit', 'Reinforced stitching throughout', 'Chest & side pockets', 'Available in sizes XS – XXL'],
+        description: 'A timeless wardrobe essential, the Classic Denim Jacket is crafted from 100% premium cotton denim. The relaxed fit pairs effortlessly with any outfit, and the reinforced stitching ensures it lasts for years. A piece you will reach for again and again.',
+        specs: [['Material','100% cotton denim (12oz)'],['Fit','Relaxed / classic fit'],['Pockets','2 chest, 2 side, 1 inner'],['Closure','Button front'],['Available Sizes','XS, S, M, L, XL, XXL'],['Care','Machine wash cold'],['Colour','Mid-wash indigo'],['Warranty','6 Months']]
+      },
+      'book': {
+        name: 'Clean Code – Robert Martin',
+        category: 'Books · Programming',
+        price: '$24.99', oldPrice: null, discount: null,
+        rating: '4.8', reviews: '340',
+        stock: 'In Stock — Ships within 24 hours',
+        badge: null,
+        images: ['product-book.jpg', 'product-book.jpg', 'product-book.jpg', 'product-book.jpg'],
+        highlights: ['464 pages of practical wisdom', 'Covers refactoring & best practices', 'Real-world code examples in Java', 'Essential for every software developer', 'Paperback & hardcover editions available'],
+        description: 'Clean Code by Robert C. Martin is a must-read for any software developer who wants to write better, more maintainable code. Through practical examples and case studies, you will learn the principles, patterns, and practices of writing clean code that your teammates will thank you for.',
+        specs: [['Author','Robert C. Martin'],['Publisher','Prentice Hall'],['Pages','464'],['Language','English'],['ISBN','978-0132350884'],['Edition','1st (2008)'],['Format','Paperback / Hardcover'],['Level','Intermediate – Advanced']]
+      },
+      'mug': {
+        name: 'Ceramic Coffee Mug Set',
+        category: 'Home & Living · Kitchen',
+        price: '$22.99', oldPrice: '$35.00', discount: '34% OFF',
+        rating: '4.4', reviews: '88',
+        stock: 'In Stock — Ships within 24 hours',
+        badge: 'Sale',
+        images: ['product-mug.jpg', 'product-mug.jpg', 'product-mug.jpg', 'product-mug.jpg'],
+        highlights: ['Set of 4 mugs (350ml each)', 'Lead-free ceramic glaze', 'Dishwasher & microwave safe', 'Comfortable ergonomic handle', 'Available in 3 colour sets'],
+        description: 'Start every morning right with the Ceramic Coffee Mug Set. Each set includes four 350ml mugs finished with a smooth lead-free glaze. The ergonomic handle provides a comfortable grip, and the thick ceramic walls keep your drinks hot longer.',
+        specs: [['Quantity','Set of 4'],['Capacity','350ml each'],['Material','High-fired ceramic'],['Glaze','Lead-free, food safe'],['Dishwasher Safe','Yes'],['Microwave Safe','Yes'],['Height','95mm'],['Diameter','85mm'],['Warranty','6 Months']]
+      },
+      'webcam': {
+        name: '4K Webcam Ultra HD',
+        category: 'Electronics · Peripherals',
+        price: '$89.99', oldPrice: null, discount: null,
+        rating: '4.8', reviews: '63',
+        stock: 'In Stock — Ships within 24 hours',
+        badge: null,
+        images: ['product-webcam.jpg', 'product-webcam.jpg', 'product-webcam.jpg', 'product-webcam.jpg'],
+        highlights: ['4K 30fps / 1080p 60fps video', 'Dual noise-cancelling microphones', 'Auto light correction', 'Universal clip — fits any monitor', 'Plug-and-play, no drivers needed'],
+        description: 'Upgrade your video calls and streams with the 4K Webcam Ultra HD. Crystal-clear 4K resolution at 30fps (or 1080p at 60fps) makes you look professional in every meeting. Auto light correction adapts to any environment, and the dual mics filter out background noise.',
+        specs: [['Resolution','4K 30fps / 1080p 60fps'],['Field of View','90°'],['Focus','Auto-focus'],['Microphone','Dual noise-cancelling'],['Connection','USB-A / USB-C'],['Compatibility','Windows, macOS, Linux'],['Mount','Universal clip + tripod thread'],['Cable Length','1.8m'],['Warranty','1 Year']]
+      },
+      'shoes': {
+        name: 'Running Shoes Pro',
+        category: 'Fashion · Footwear',
+        price: '$99.99', oldPrice: null, discount: null,
+        rating: '4.4', reviews: '115',
+        stock: 'In Stock — Ships within 24 hours',
+        badge: 'Hot',
+        images: ['product-shoes.jpg', 'product-shoes.jpg', 'product-shoes.jpg', 'product-shoes.jpg'],
+        highlights: ['Responsive foam midsole', 'Breathable engineered mesh upper', 'Durable rubber outsole', 'Available in UK sizes 4 – 13', 'Suitable for road & trail running'],
+        description: 'The Running Shoes Pro are engineered for performance. The responsive foam midsole returns energy with every stride, while the breathable mesh upper keeps your feet cool on long runs. Versatile enough for road or trail, they are built to go the distance.',
+        specs: [['Upper','Engineered mesh'],['Midsole','Responsive EVA foam'],['Outsole','Carbon rubber'],['Drop','8mm heel-to-toe'],['Weight','280g (UK 9)'],['Available Sizes','UK 4 – 13'],['Closure','Lace-up'],['Best For','Road & light trail'],['Warranty','6 Months']]
+      },
+      'lamp': {
+        name: 'Smart LED Desk Lamp',
+        category: 'Home & Living · Lighting',
+        price: '$34.99', oldPrice: null, discount: null,
+        rating: '4.8', reviews: '47',
+        stock: 'In Stock — Ships within 24 hours',
+        badge: null,
+        images: ['product-lamp.jpg', 'product-lamp.jpg', 'product-lamp.jpg', 'product-lamp.jpg'],
+        highlights: ['5 colour temperatures (2700K – 6500K)', '10 brightness levels', 'Built-in USB-A charging port', 'Touch-sensitive controls', 'Memory function — recalls last setting'],
+        description: 'The Smart LED Desk Lamp adapts to your needs throughout the day. Choose from five colour temperatures — warm white for evenings to cool daylight for focused work — paired with ten brightness levels. The built-in USB port lets you charge your phone while you work.',
+        specs: [['Power','12W LED'],['Colour Temperature','2700K – 6500K (5 modes)'],['Brightness Levels','10'],['Lifetime','50,000 hours'],['USB Port','5V / 1A USB-A'],['Arm Reach','450mm'],['Base Diameter','140mm'],['Input','100 – 240V AC'],['Warranty','2 Years']]
+      },
+      'hub': {
+        name: 'USB-C Hub 7-in-1',
+        category: 'Electronics · Accessories',
+        price: '$39.99', oldPrice: null, discount: null,
+        rating: '4.4', reviews: '89',
+        stock: 'In Stock — Ships within 24 hours',
+        badge: 'New',
+        images: ['product-hub.jpg', 'product-hub.jpg', 'product-hub.jpg', 'product-hub.jpg'],
+        highlights: ['4K HDMI output', '100W USB-C Power Delivery pass-through', '3× USB-A 3.0 ports (5Gbps)', 'SD & microSD card reader', 'Compact aluminium shell'],
+        description: 'The USB-C Hub 7-in-1 turns a single USB-C port into a full workstation. Connect a 4K monitor via HDMI, transfer files at USB 3.0 speeds, read SD cards, and charge your laptop — all simultaneously. The slim aluminium shell dissipates heat and looks great on any desk.',
+        specs: [['Ports','1× HDMI, 3× USB-A 3.0, 1× USB-C PD, 1× SD, 1× microSD'],['HDMI Output','4K @ 30Hz'],['USB-A Speed','5Gbps (USB 3.0)'],['Power Delivery','100W pass-through'],['SD Card Speed','104MB/s UHS-I'],['Host Cable','USB-C (18cm)'],['Material','Aluminium + ABS'],['Dimensions','110 × 35 × 14mm'],['Warranty','1 Year']]
+      },
+      'candle': {
+        name: 'Scented Candle Collection',
+        category: 'Home & Living · Décor',
+        price: '$18.99', oldPrice: null, discount: null,
+        rating: '4.8', reviews: '204',
+        stock: 'In Stock — Ships within 24 hours',
+        badge: null,
+        images: ['product-candle.jpg', 'product-candle.jpg', 'product-candle.jpg', 'product-candle.jpg'],
+        highlights: ['Set of 3 hand-poured soy candles', '45-hour burn time each', 'Premium fragrance oil blends', 'Lead-free cotton wick', 'Gift-ready kraft packaging'],
+        description: 'Transform any space with the Scented Candle Collection. Each set includes three hand-poured soy wax candles in premium fragrance blends — Vanilla & Amber, Fresh Linen, and Cedarwood & Sage. Made with 100% natural soy wax and lead-free cotton wicks for a clean, even burn.',
+        specs: [['Quantity','Set of 3'],['Wax','100% natural soy wax'],['Wick','Lead-free cotton'],['Burn Time','~45 hours each'],['Fragrance Load','10%'],['Volume','200ml each'],['Scents','Vanilla & Amber, Fresh Linen, Cedarwood & Sage'],['Packaging','Gift-ready kraft box'],['Warranty','Satisfaction guaranteed']]
+      }
+    };
+
+    /* ── PAGE INITIALISATION ── */
+    function initPage() {
+      const id = new URLSearchParams(window.location.search).get('id') || 'earbuds';
+      const p = catalog[id] || catalog['earbuds'];
+      const base = '/images/';
+
+      document.title = 'ShopEase – ' + p.name;
+
+      document.getElementById('breadcrumb-product').textContent = p.name;
+      document.getElementById('detail-category').textContent = p.category;
+      document.getElementById('detail-title').textContent = p.name;
+      document.getElementById('rating-score').textContent = p.rating;
+      document.getElementById('rating-count').textContent = '(' + p.reviews + ' reviews)';
+      document.getElementById('price-current').textContent = p.price;
+      document.getElementById('avg-score-num').textContent = p.rating;
+      document.getElementById('avg-score-label').textContent = p.reviews + ' reviews';
+
+      const oldPriceEl = document.getElementById('price-old');
+      const discountEl  = document.getElementById('price-discount');
+      if (p.oldPrice) {
+        oldPriceEl.textContent   = p.oldPrice;
+        discountEl.textContent   = p.discount;
+        oldPriceEl.style.display = '';
+        discountEl.style.display  = '';
+      } else {
+        oldPriceEl.style.display = 'none';
+        discountEl.style.display  = 'none';
+      }
+
+      document.getElementById('stock-status').textContent = p.stock;
+
+      const badgeEl = document.getElementById('badge-main');
+      if (p.badge) {
+        badgeEl.textContent   = p.badge;
+        badgeEl.style.display = '';
+      } else {
+        badgeEl.style.display = 'none';
+      }
+
+      /* Main image */
+      const mainImg = document.getElementById('mainImg');
+      mainImg.src = base + p.images[0];
+      mainImg.alt = p.name;
+
+      /* Thumbnails */
+      document.querySelectorAll('.gallery-thumb').forEach(function(thumb, i) {
+        const src = base + (p.images[i] || p.images[0]);
+        const img = document.getElementById('thumb-' + i);
+        img.src = src;
+        img.alt = p.name + ' – view ' + (i + 1);
+        thumb.onclick = function() { setImg(this, src); };
+      });
+
+      /* Highlights */
+      document.getElementById('highlights-list').innerHTML =
+        p.highlights.map(function(h) { return '<li>' + h + '</li>'; }).join('');
+
+      /* Description */
+      document.getElementById('desc-text').textContent = p.description;
+
+      /* Spec table */
+      document.getElementById('specs-table').innerHTML =
+        p.specs.map(function(row) {
+          return '<tr><td>' + row[0] + '</td><td>' + row[1] + '</td></tr>';
+        }).join('');
+
+      /* Related products — show 4 others from the catalog */
+      const relatedIds = Object.keys(catalog).filter(function(k) { return k !== id; }).slice(0, 4);
+      document.getElementById('related-grid').innerHTML = relatedIds.map(function(rid) {
+        const rp = catalog[rid];
+        return '<div class="product-card">'
+          + '<div class="product-img-sm"><img src="' + base + rp.images[0] + '" alt="' + rp.name + '" /></div>'
+          + '<div class="product-info-sm">'
+          + '<div class="product-name-sm">' + rp.name + '</div>'
+          + '<div class="product-price-sm">' + rp.price + '</div>'
+          + '<a href="product-details.html?id=' + rid + '" class="btn-sm">View Details</a>'
+          + '</div></div>';
+      }).join('');
+    }
+
+    initPage();
+
+    /* ── UI INTERACTIONS ── */
+    document.getElementById('hamburger').addEventListener('click', function() {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    });
+
+    document.querySelectorAll('.tab-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+        document.querySelectorAll('.tab-content').forEach(function(c) { c.classList.remove('active'); });
+        this.classList.add('active');
+        document.getElementById('tab-' + this.dataset.tab).classList.add('active');
+      });
+    });
+
+    function setImg(thumb, src) {
+      document.querySelectorAll('.gallery-thumb').forEach(function(t) { t.classList.remove('active'); });
+      thumb.classList.add('active');
+      document.getElementById('mainImg').src = src;
+    }
+
+    function selectColor(swatch, name) {
+      document.querySelectorAll('.color-swatch').forEach(function(s) { s.classList.remove('active'); });
+      swatch.classList.add('active');
+      document.getElementById('selectedColor').textContent = name;
+    }
+
+    function changeQty(delta) {
+      const input = document.getElementById('qty');
+      input.value = Math.min(10, Math.max(1, parseInt(input.value) + delta));
+    }
+
+    document.getElementById('addCartBtn').addEventListener('click', function() {
+      this.textContent = '✓ Added!';
+      this.style.background = '#2ecc71';
+      var btn = this;
+      setTimeout(function() {
+        btn.textContent = '🛒 Add to Cart';
+        btn.style.background = '';
+      }, 2000);
+    });
+  </script>
+</body>
+</html>

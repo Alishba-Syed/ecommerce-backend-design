@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShopEase – Products</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="home.html" class="logo">Shop<span>Ease</span></a>
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="products.html" class="active">Products</a></li>
+        <li><a href="home.html#categories">Categories</a></li>
+        <li><a href="home.html#features">About</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="#" class="btn-cart">&#128722; Cart (0)</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="home.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="home.html#categories">Categories</a>
+      <a href="home.html#features">About</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="page-header-inner">
+      <div class="breadcrumb">
+        <a href="home.html">Home</a> &rsaquo; Products
+      </div>
+      <h1>All Products</h1>
+      <p>Showing 120 results across all categories</p>
+    </div>
+  </div>
+
+  <!-- SEARCH + SORT BAR -->
+  <div class="search-bar-section">
+    <div class="search-bar-inner">
+      <div class="search-input-wrap">
+        <span class="search-icon">&#128269;</span>
+        <input type="text" placeholder="Search products..." id="searchInput" />
+      </div>
+      <select class="sort-select" id="sortSelect">
+        <option>Sort: Featured</option>
+        <option>Price: Low to High</option>
+        <option>Price: High to Low</option>
+        <option>Newest First</option>
+        <option>Best Rating</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- MAIN LAYOUT -->
+  <div class="shop-layout">
+
+    <!-- SIDEBAR FILTERS -->
+    <aside class="sidebar" id="sidebar">
+
+      <div class="filter-card">
+        <h4>Categories</h4>
+        <ul class="filter-list">
+          <li><label><input type="checkbox" checked /> All Products</label><span class="filter-count">120</span></li>
+          <li><label><input type="checkbox" /> Electronics</label><span class="filter-count">32</span></li>
+          <li><label><input type="checkbox" /> Fashion</label><span class="filter-count">48</span></li>
+          <li><label><input type="checkbox" /> Home &amp; Living</label><span class="filter-count">26</span></li>
+          <li><label><input type="checkbox" /> Books</label><span class="filter-count">14</span></li>
+        </ul>
+      </div>
+
+      <div class="filter-card">
+        <h4>Price Range</h4>
+        <div class="price-range">
+          <input type="range" min="0" max="500" value="250" id="priceRange" />
+          <div class="price-labels">
+            <span>$0</span>
+            <span id="priceLabel">$250</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="filter-card">
+        <h4>Rating</h4>
+        <ul class="filter-list rating-filter">
+          <li><label><input type="checkbox" /> &#9733;&#9733;&#9733;&#9733;&#9733; <span>&amp; up</span></label></li>
+          <li><label><input type="checkbox" /> &#9733;&#9733;&#9733;&#9733;&#9734; <span>&amp; up</span></label></li>
+          <li><label><input type="checkbox" /> &#9733;&#9733;&#9733;&#9734;&#9734; <span>&amp; up</span></label></li>
+          <li><label><input type="checkbox" /> &#9733;&#9733;&#9734;&#9734;&#9734; <span>&amp; up</span></label></li>
+        </ul>
+      </div>
+
+      <div class="filter-card">
+        <h4>Availability</h4>
+        <ul class="filter-list">
+          <li><label><input type="checkbox" checked /> In Stock</label></li>
+          <li><label><input type="checkbox" /> On Sale</label></li>
+          <li><label><input type="checkbox" /> New Arrivals</label></li>
+        </ul>
+      </div>
+
+      <button class="btn-clear-filter">Clear All Filters</button>
+
+    </aside>
+
+    <!-- PRODUCT AREA -->
+    <main class="product-area">
+
+      <button class="filter-toggle-btn" id="filterToggle">&#9776; Filters</button>
+
+      <div class="product-area-header">
+        <p class="result-count">Showing <strong>1–12</strong> of <strong>120</strong> products</p>
+        <div class="view-toggle">
+          <button class="view-btn active" id="gridViewBtn" title="Grid view">&#9783;</button>
+          <button class="view-btn" id="listViewBtn" title="List view">&#9776;</button>
+        </div>
+      </div>
+
+      <div class="products-grid" id="productsGrid">
+
+        <div class="product-card">
+          <div class="product-img">
+            <span class="product-badge">New</span>
+            <button class="wishlist-btn" aria-label="Wishlist">&#9825;</button>
+            <img src="/images/product-earbuds.jpg" alt="Wireless Earbuds Pro" />
+          </div>
+          <div class="product-info">
+            <div class="product-category">Electronics</div>
+            <div class="product-name">Wireless Earbuds Pro</div>
+            <div class="product-rating">&#9733;&#9733;&#9733;&#9733;&#9733; <span>(128)</span></div>
+            <div class="product-footer">
+              <div class="product-price"><span class="old-price">$89.00</span>$59.99</div>
+              <a href="product-details.html?id=earbuds" class="btn-add">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">
+            <span class="product-badge">Hot</span>
+            <button class="wishlist-btn" aria-label="Wishlist">&#9825;</button>
+            <img src="/images/product-smartwatch.jpg" alt="Smart Watch Series X" />
+          </div>
+          <div class="product-info">
+            <div class="product-category">Electronics</div>
+            <div class="product-name">Smart Watch Series X</div>
+            <div class="product-rating">&#9733;&#9733;&#9733;&#9733;&#9734; <span>(94)</span></div>
+            <div class="product-footer">
+              <div class="product-price">$129.99</div>
+              <a href="product-details.html?id=smartwatch" class="btn-add">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">
+            <span class="product-badge">Sale</span>
+            <button class="wishlist-btn" aria-label="Wishlist">&#9825;</button>
+            <img src="/images/product-laptop-stand.jpg" alt="Aluminium Laptop Stand" />
+          </div>
+          <div class="product-info">
+            <div class="product-category">Electronics</div>
+            <div class="product-name">Aluminium Laptop Stand</div>
+            <div class="product-rating">&#9733;&#9733;&#9733;&#9733;&#9733; <span>(210)</span></div>
+            <div class="product-footer">
+              <div class="product-price"><span class="old-price">$45.00</span>$29.99</div>
+              <a href="product-details.html?id=laptop-stand" class="btn-add">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">
+            <button class="wishlist-btn" aria-label="Wishlist">&#9825;</button>
+            <img src="/images/product-speaker.jpg" alt="Portable Bluetooth Speaker" />
+          </div>
+          <div class="product-info">
+            <div class="product-category">Electronics</div>
+            <div class="product-name">Portable Bluetooth Speaker</div>
+            <div class="product-rating">&#9733;&#9733;&#9733;&#9733;&#9734; <span>(76)</span></div>
+            <div class="product-footer">
+              <div class="product-price">$44.99</div>
+              <a href="product-details.html?id=speaker" class="btn-add">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">
+            <span class="product-badge">New</span>
+            <button class="wishlist-btn" aria-label="Wishlist">&#9825;</button>
+            <img src="/images/product-jacket.jpg" alt="Classic Denim Jacket" />
+          </div>
+          <div class="product-info">
+            <div class="product-category">Fashion</div>
+            <div class="product-name">Classic Denim Jacket</div>
+            <div class="product-rating">&#9733;&#9733;&#9733;&#9733;&#9733; <span>(52)</span></div>
+            <div class="product-footer">
+              <div class="product-price">$79.99</div>
+              <a href="product-details.html?id=jacket" class="btn-add">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">
+            <button class="wishlist-btn" aria-label="Wishlist">&#9825;</button>
+            <img src="/images/product-book.jpg" alt="Clean Code – Robert Martin" />
+          </div>
+          <div class="product-info">
+            <div class="product-category">Books</div>
+            <div class="product-name">Clean Code – Robert Martin</div>
+            <div class="product-rating">&#9733;&#9733;&#9733;&#9733;&#9733; <span>(340)</span></div>
+            <div class="product-footer">
+              <div class="product-price">$24.99</div>
+              <a href="product-details.html?id=book" class="btn-add">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">
+            <span class="product-badge">Sale</span>
+            <button class="wishlist-btn" aria-label="Wishlist">&#9825;</button>
+            <img src="/images/product-mug.jpg" alt="Ceramic Coffee Mug Set" />
+          </div>
+          <div class="product-info">
+            <div class="product-category">Home &amp; Living</div>
+            <div class="product-name">Ceramic Coffee Mug Set</div>
+            <div class="product-rating">&#9733;&#9733;&#9733;&#9733;&#9734; <span>(88)</span></div>
+            <div class="product-footer">
+              <div class="product-price"><span class="old-price">$35.00</span>$22.99</div>
+              <a href="product-details.html?id=mug" class="btn-add">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">
+            <button class="wishlist-btn" aria-label="Wishlist">&#9825;</button>
+            <img src="/images/product-webcam.jpg" alt="4K Webcam Ultra HD" />
+          </div>
+          <div class="product-info">
+            <div class="product-category">Electronics</div>
+            <div class="product-name">4K Webcam Ultra HD</div>
+            <div class="product-rating">&#9733;&#9733;&#9733;&#9733;&#9733; <span>(63)</span></div>
+            <div class="product-footer">
+              <div class="product-price">$89.99</div>
+              <a href="product-details.html?id=webcam" class="btn-add">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">
+            <span class="product-badge">Hot</span>
+            <button class="wishlist-btn" aria-label="Wishlist">&#9825;</button>
+            <img src="/images/product-shoes.jpg" alt="Running Shoes Pro" />
+          </div>
+          <div class="product-info">
+            <div class="product-category">Fashion</div>
+            <div class="product-name">Running Shoes Pro</div>
+            <div class="product-rating">&#9733;&#9733;&#9733;&#9733;&#9734; <span>(115)</span></div>
+            <div class="product-footer">
+              <div class="product-price">$99.99</div>
+              <a href="product-details.html?id=shoes" class="btn-add">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">
+            <button class="wishlist-btn" aria-label="Wishlist">&#9825;</button>
+            <img src="/images/product-lamp.jpg" alt="Smart LED Desk Lamp" />
+          </div>
+          <div class="product-info">
+            <div class="product-category">Home &amp; Living</div>
+            <div class="product-name">Smart LED Desk Lamp</div>
+            <div class="product-rating">&#9733;&#9733;&#9733;&#9733;&#9733; <span>(47)</span></div>
+            <div class="product-footer">
+              <div class="product-price">$34.99</div>
+              <a href="product-details.html?id=lamp" class="btn-add">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">
+            <span class="product-badge">New</span>
+            <button class="wishlist-btn" aria-label="Wishlist">&#9825;</button>
+            <img src="/images/product-hub.jpg" alt="USB-C Hub 7-in-1" />
+          </div>
+          <div class="product-info">
+            <div class="product-category">Electronics</div>
+            <div class="product-name">USB-C Hub 7-in-1</div>
+            <div class="product-rating">&#9733;&#9733;&#9733;&#9733;&#9734; <span>(89)</span></div>
+            <div class="product-footer">
+              <div class="product-price">$39.99</div>
+              <a href="product-details.html?id=hub" class="btn-add">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">
+            <button class="wishlist-btn" aria-label="Wishlist">&#9825;</button>
+            <img src="/images/product-candle.jpg" alt="Scented Candle Collection" />
+          </div>
+          <div class="product-info">
+            <div class="product-category">Home &amp; Living</div>
+            <div class="product-name">Scented Candle Collection</div>
+            <div class="product-rating">&#9733;&#9733;&#9733;&#9733;&#9733; <span>(204)</span></div>
+            <div class="product-footer">
+              <div class="product-price">$18.99</div>
+              <a href="product-details.html?id=candle" class="btn-add">View Details</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- PAGINATION -->
+      <div class="pagination">
+        <button class="page-btn" disabled>&#8249;</button>
+        <button class="page-btn active">1</button>
+        <button class="page-btn">2</button>
+        <button class="page-btn">3</button>
+        <button class="page-btn">4</button>
+        <span style="padding:0 4px;color:#666;">...</span>
+        <button class="page-btn">10</button>
+        <button class="page-btn">&#8250;</button>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <span>&copy; 2026 ShopEase. All rights reserved.</span>
+        <span><a href="home.html" style="color:#aab4c8;text-decoration:none;">&#8592; Back to Home</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    });
+
+    document.getElementById('filterToggle').addEventListener('click', () => {
+      document.getElementById('sidebar').classList.toggle('open');
+    });
+
+    const priceRange = document.getElementById('priceRange');
+    priceRange.addEventListener('input', () => {
+      document.getElementById('priceLabel').textContent = '$' + priceRange.value;
+    });
+
+    const gridViewBtn = document.getElementById('gridViewBtn');
+    const listViewBtn = document.getElementById('listViewBtn');
+    const grid = document.getElementById('productsGrid');
+
+    gridViewBtn.addEventListener('click', () => {
+      grid.classList.remove('list-view');
+      gridViewBtn.classList.add('active');
+      listViewBtn.classList.remove('active');
+    });
+
+    listViewBtn.addEventListener('click', () => {
+      grid.classList.add('list-view');
+      listViewBtn.classList.add('active');
+      gridViewBtn.classList.remove('active');
+    });
+
+    document.querySelectorAll('.page-btn:not([disabled])').forEach(btn => {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('.page-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
