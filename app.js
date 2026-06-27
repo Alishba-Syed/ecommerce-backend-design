@@ -21,13 +21,13 @@ app.use(cookieParser());
 // 5. Mongoose library ko import karein
 const mongoose = require('mongoose');
 
-const User = require('./models/User');
+const User = require('./models/user');
 
 // 6. MongoDB Database se connect karein
 mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/ecommerceDB')
     .then(() => console.log("Connected to MongoDB successfully! 🎉"))
     .catch((err) => console.error("Could not connect to MongoDB:", err));
-    
+
 // 7. Product Schema banayein (Database ka structure)
 const productSchema = new mongoose.Schema({
     name: String,
