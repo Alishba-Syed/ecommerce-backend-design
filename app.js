@@ -5,7 +5,6 @@ const cookieParser = require('cookie-parser');
 
 // 2. Express ka app instance banayein
 const app = express();
-app.set('view engine', 'ejs');
 
 // 3. 'path' module ko import karein (jo folders ka rasta sahi set karta hai)
 const path = require('path');
@@ -84,7 +83,7 @@ app.get('/products', async (req, res) => {
         // --- PAGINATION LOGIC END ---
         
         // Data ko products.ejs file ko bhej dena (Saath mein pagination parameters bhi bhej rahe hain)
-        res.render('products', { 
+        res.json('products', { 
             productsArr: allProducts, 
             currentPage: page, 
             totalPages: totalPages,
@@ -107,7 +106,7 @@ app.get('/products/:id', async (req, res) => {
         }
 
         // EJS ko data pass kar rahe hain
-        res.render('product-details', { product: product });
+        res.json('product-details', { product: product });
     } catch (err) {
         console.error("Details nikalne mein masla hua:", err);
         res.status(500).send("Server mein koi kharabi hai.");
@@ -119,7 +118,7 @@ const checkAuth = (req, res, next) => {
 
     if (!token) {
         // Agar token nahi hai, to login page par bhej do aur error dikhao
-        return res.render('login', { error: 'Naya product add karne ke liye pehle login karein!' });
+        return res.json('login', { error: 'Naya product add karne ke liye pehle login karein!' });
     }
 
     try {
@@ -129,13 +128,13 @@ const checkAuth = (req, res, next) => {
         next(); // Agle step (route) par jaane ki ijazat dena
     } catch (err) {
         res.clearCookie('token');
-        return res.render('login', { error: 'Session expired. Dobara login karein.' });
+        return res.json('login', { error: 'Session expired. Dobara login karein.' });
     }
 };
 
 // [Week 3 Task] 1. GET Route: Form Render (PROTECTED - Ab checkAuth check karega)
 app.get('/admin/add-product', checkAuth, (req, res) => {
-    res.render('add-product');
+    res.json('add-product');
 });
 
 // [Week 3 Task] 2. POST Route: Save Product (PROTECTED - Ab checkAuth check karega)
@@ -165,12 +164,12 @@ const JWT_SECRET = "MeraShopEaseSecretKey123";
 
 // 1. SIGNUP PAGE (GET)
 app.get('/signup', (req, res) => {
-    res.render('signup', { error: null });
+    res.json('signup', { error: null });
 });
 
 // 1. SIGNUP PAGE (GET)
 app.get('/signup', (req, res) => {
-    res.render('signup', { error: null });
+    res.json('signup', { error: null });
 });
 
 // 2. SIGNUP PROCESS (POST)
@@ -181,7 +180,7 @@ app.post('/signup', async (req, res) => {
         // Check if the email is already registered
         const existingUser = await User.findOne({ email });
         if (existingUser) {
-            return res.render('signup', { error: 'This email is already registered.' });
+            return res.json('signup', { error: 'This email is already registered.' });
         }
 
         // Encrypt (hash) the password
@@ -206,7 +205,7 @@ app.post('/signup', async (req, res) => {
 
 // 3. LOGIN PAGE (GET)
 app.get('/login', (req, res) => {
-    res.render('login', { error: null });
+    res.json('login', { error: null });
 });
 
 // 4. LOGIN PROCESS (POST) - With Cookie Storage
@@ -217,13 +216,13 @@ app.post('/login', async (req, res) => {
         // Find user by email
         const user = await User.findOne({ email });
         if (!user) {
-            return res.render('login', { error: 'Invalid Email or Password.' });
+            return res.json('login', { error: 'Invalid Email or Password.' });
         }
 
         // Check password match
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) {
-            return res.render('login', { error: 'Invalid Email or Password.' });
+            return res.json('login', { error: 'Invalid Email or Password.' });
         }
 
         // Generate JWT Token
