@@ -50,7 +50,7 @@ app.get('/', async (req, res) => {
         const featuredProducts = await Product.find({}).limit(4); 
         
         // 2. Data ko 'productsArr' ke naam se home.ejs ko bhejna
-        res.render('home', { productsArr: featuredProducts }); 
+        res.json({ productsArr: featuredProducts });
     } catch (err) {
         console.error("Home page data nikalne mein masla hua:", err);
         res.status(500).send("Server mein koi kharabi hai.");
