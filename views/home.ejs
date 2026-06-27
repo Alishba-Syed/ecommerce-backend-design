@@ -9,29 +9,32 @@
 <body>
 
   <!-- NAV -->
-  <nav>
-    <div class="nav-inner">
-      <a href="home.html" class="logo">Shop<span>Ease</span></a>
-      <ul class="nav-links">
-        <li><a href="home.html" class="active">Home</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="#categories">Categories</a></li>
-        <li><a href="#features">About</a></li>
-      </ul>
-      <div class="nav-actions">
-        <a href="products.html" class="btn-cart">&#128722; Cart (0)</a>
-        <button class="hamburger" id="hamburger" aria-label="Menu">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">Shop<span>Ease</span></a>
+    
+    <ul class="nav-links">
+      <li><a href="/" class="active">Home</a></li>
+      <li><a href="/products">Products</a></li>
+      <li><a href="/#categories">Categories</a></li>
+      <li><a href="/#features">About</a></li>
+    </ul>
+    
+    <div class="nav-actions">
+      <a href="/products" class="btn-cart">&#128722; Cart (0)</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="home.html">Home</a>
-      <a href="products.html">Products</a>
-      <a href="#categories">Categories</a>
-      <a href="#features">About</a>
-    </div>
-  </nav>
+  </div>
+  
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/">Home</a>
+    <a href="/products">Products</a>
+    <a href="/#categories">Categories</a>
+    <a href="/#features">About</a>
+  </div>
+</nav>
 
   <!-- HERO -->
   <section class="hero">
@@ -40,8 +43,8 @@
       <h1>Discover Amazing <span>Products</span> You'll Love</h1>
       <p>Shop thousands of curated items across every category — all at competitive prices with fast, free shipping.</p>
       <div class="hero-cta">
-        <a href="products.html" class="btn-primary">Shop Now</a>
-        <a href="#featured" class="btn-outline">View Featured</a>
+       <a href="/products" class="btn-primary">Shop Now</a>
+      <a href="/#featured" class="btn-outline">View Featured</a>
       </div>
     </div>
   </section>
@@ -65,7 +68,7 @@
       </div>
       <div class="categories-grid">
 
-        <a href="products.html" class="category-card">
+        <a href="/products" class="category-card">
           <img src="/images/cat-electronics.jpg" alt="Electronics" />
           <div class="category-info">
             <h3>Electronics</h3>
@@ -73,7 +76,7 @@
           </div>
         </a>
 
-        <a href="products.html" class="category-card">
+        <a href="/products" class="category-card">
           <img src="/images/cat-fashion.jpg" alt="Fashion" />
           <div class="category-info">
             <h3>Fashion</h3>
@@ -81,7 +84,7 @@
           </div>
         </a>
 
-        <a href="products.html" class="category-card">
+        <a href="/products" class="category-card">
           <img src="/images/cat-home.jpg" alt="Home and Living" />
           <div class="category-info">
             <h3>Home &amp; Living</h3>
@@ -89,7 +92,7 @@
           </div>
         </a>
 
-        <a href="products.html" class="category-card">
+        <a href="/products" class="category-card">
           <img src="/images/cat-books.jpg" alt="Books" />
           <div class="category-info">
             <h3>Books</h3>
@@ -101,88 +104,48 @@
     </div>
   </section>
 
-  <!-- FEATURED PRODUCTS -->
-  <section class="featured" id="featured">
-    <div class="section-inner">
-      <div class="section-header">
-        <h2>Featured Products</h2>
-        <p>Handpicked just for you — our bestsellers this week</p>
-      </div>
-      <div class="products-grid">
+ <section class="featured" id="featured">
+  <div class="section-inner">
+    <div class="section-header">
+      <h2>Featured Products</h2>
+      <p>Handpicked just for you — our bestsellers this week</p>
+    </div>
+    <div class="products-grid">
 
+      <!-- Database se aane wale products par loop shuru -->
+      <% productsArr.forEach(product => { %>
         <div class="product-card">
           <div class="product-img">
-            <span class="product-badge">New</span>
-            <img src="/images/product-earbuds.jpg" alt="Wireless Earbuds Pro" />
+            <!-- Agar database mein badge hai to dikhaye, nahi to 'New' default -->
+            <span class="product-badge"><%= product.badge || 'New' %></span>
+            <!-- Database ki real image -->
+            <img src="<%= product.image %>" alt="<%= product.name %>" />
           </div>
           <div class="product-info">
-            <div class="product-name">Wireless Earbuds Pro</div>
+            <!-- Database ka real name -->
+            <div class="product-name"><%= product.name %></div>
             <div class="product-rating">&#9733;&#9733;&#9733;&#9733;&#9733; <span>(128)</span></div>
             <div class="product-footer">
               <div class="product-price">
-                <span class="old-price">$89</span>$59.99
+                <!-- Database ki real price -->
+                $<%= product.price %>
               </div>
-              <a href="product-details.html?id=earbuds" class="btn-add">View</a>
+              <!-- Product ki specific ID par bhejne ke liye link -->
+              <a href="/products/<%= product._id %>" class="btn-add">View</a>
             </div>
           </div>
         </div>
+      <% }) %>
 
-        <div class="product-card">
-          <div class="product-img">
-            <span class="product-badge">Hot</span>
-            <img src="/images/product-smartwatch.jpg" alt="Smart Watch Series X" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">Smart Watch Series X</div>
-            <div class="product-rating">&#9733;&#9733;&#9733;&#9733;&#9734; <span>(94)</span></div>
-            <div class="product-footer">
-              <div class="product-price">$129.99</div>
-              <a href="product-details.html?id=smartwatch" class="btn-add">View</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-img">
-            <span class="product-badge">Sale</span>
-            <img src="/images/product-laptop-stand.jpg" alt="Laptop Stand Aluminium" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">Laptop Stand Aluminium</div>
-            <div class="product-rating">&#9733;&#9733;&#9733;&#9733;&#9733; <span>(210)</span></div>
-            <div class="product-footer">
-              <div class="product-price">
-                <span class="old-price">$45</span>$29.99
-              </div>
-              <a href="product-details.html?id=laptop-stand" class="btn-add">View</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-img">
-            <span class="product-badge">Top</span>
-            <img src="/images/product-speaker.jpg" alt="Bluetooth Speaker" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">Bluetooth Speaker</div>
-            <div class="product-rating">&#9733;&#9733;&#9733;&#9733;&#9734; <span>(76)</span></div>
-            <div class="product-footer">
-              <div class="product-price">$44.99</div>
-              <a href="product-details.html?id=speaker" class="btn-add">View</a>
-            </div>
-          </div>
-        </div>
-
-      </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- PROMO BANNER -->
   <div class="promo-banner">
     <h2>Summer Sale — Up to 50% Off!</h2>
     <p>Limited time offer. Don't miss out on our biggest sale of the year.</p>
-    <a href="products.html" class="btn-outline" style="border-color:rgba(255,255,255,0.6); font-size:0.95rem;">Browse All Deals</a>
+    <a href="/products" class="btn-outline" style="border-color:rgba(255,255,255,0.6); font-size:0.95rem;">Browse All Deals</a>
   </div>
 
   <!-- FEATURES / WHY US -->
@@ -222,13 +185,13 @@
     <div class="footer-inner">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="home.html" class="logo">Shop<span>Ease</span></a>
+          <a href="/" class="logo">Shop<span>Ease</span></a>
           <p>Your one-stop destination for quality products at unbeatable prices. Shop smarter, live better.</p>
         </div>
         <div class="footer-col">
           <h5>Shop</h5>
           <ul>
-            <li><a href="products.html">All Products</a></li>
+            <li><a href="/products">All Products</a></li>
             <li><a href="#">New Arrivals</a></li>
             <li><a href="#">Best Sellers</a></li>
             <li><a href="#">Deals &amp; Offers</a></li>
