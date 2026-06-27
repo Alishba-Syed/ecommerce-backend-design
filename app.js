@@ -24,10 +24,10 @@ const mongoose = require('mongoose');
 const User = require('./models/User');
 
 // 6. MongoDB Database se connect karein
-mongoose.connect('mongodb://localhost:27017/ecommerceDB')
-    .then(() => console.log("Wah! MongoDB se connection kamyab raha. 🎉"))
-    .catch((err) => console.error("MongoDB se connect nahi ho saka:", err));
-
+mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/ecommerceDB')
+    .then(() => console.log("Connected to MongoDB successfully! 🎉"))
+    .catch((err) => console.error("Could not connect to MongoDB:", err));
+    
 // 7. Product Schema banayein (Database ka structure)
 const productSchema = new mongoose.Schema({
     name: String,
