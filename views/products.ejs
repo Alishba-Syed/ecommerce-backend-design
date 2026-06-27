@@ -163,27 +163,36 @@
         <% }); %>
         </div>
 
-      <!-- PAGINATION -->
-      <div class="pagination">
-        <button class="page-btn" disabled>&#8249;</button>
-        <button class="page-btn active">1</button>
-        <button class="page-btn">2</button>
-        <button class="page-btn">3</button>
-        <button class="page-btn">4</button>
-        <span style="padding:0 4px;color:#666;">...</span>
-        <button class="page-btn">10</button>
-        <button class="page-btn">&#8250;</button>
-      </div>
+     <!-- DYNAMIC PAGINATION CODE  -->
+<div class="pagination">
+  
+  <!-- Previous Button -->
+  <% if (currentPage > 1) { %>
+    <a href="/products?page=<%= currentPage - 1 %>&search=<%= searchQuery %>" class="page-btn" style="text-decoration: none;">&#8249;</a>
+  <% } else { %>
+    <button class="page-btn" disabled>&#8249;</button>
+  <% } %>
 
-    </main>
-  </div>
+  <!-- Current Page Info Display -->
+  <span style="padding: 0 10px; align-self: center; font-weight: bold; font-family: sans-serif;">
+    <%= currentPage %> / <%= totalPages %>
+  </span>
+
+  <!-- Next Button -->
+  <% if (currentPage < totalPages) { %>
+    <a href="/products?page=<%= currentPage + 1 %>&search=<%= searchQuery %>" class="page-btn" style="text-decoration: none;">&#8250;</a>
+  <% } else { %>
+    <button class="page-btn" disabled>&#8250;</button>
+  <% } %>
+
+</div>
 
   <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
       <div class="footer-bottom">
         <span>&copy; 2026 ShopEase. All rights reserved.</span>
-        <span><a href="home.html" style="color:#aab4c8;text-decoration:none;">&#8592; Back to Home</a></span>
+        <span><a href="/" style="color:#aab4c8;text-decoration:none;">&#8592; Back to Home</a></span>
       </div>
     </div>
   </footer>
